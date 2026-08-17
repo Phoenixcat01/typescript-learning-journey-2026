@@ -95,3 +95,17 @@ else if (typeof responsDariServer === "string") {
 // Kenapa Menggunakan unknown Lebih Baik Daripada any?
 // Dengan any: Kamu bisa saja tidak sengaja memanggil fungsi yang salah pada data tersebut (misal memanggil .toUpperCase() pada angka), dan kodenya tidak akan ketahuan error saat diketik, tapi akan crash (rusak) saat dijalankan.
 // Dengan unknown: TypeScript memaksa kamu untuk mengecek tipe datanya terlebih dahulu (typeof), sehingga aplikasi jauh lebih aman dari bug tak terduga.
+
+// cek pemahaman:
+// Pertanyaan 1:
+// Jika kamu membuat variabel seperti ini: let statusAktif = true;, apakah kamu wajib menuliskan tipe data : boolean secara manual di sampingnya? Mengapa?
+
+// Pertanyaan 2:
+// Apa perbedaan utama antara tipe data any dan unknown saat kita ingin mengolah data dari variabel tersebut?
+
+// jawaban:
+// jawaban nomor 1, kalau kita tidak menuliskan tipe data boolean, sebenarnya tidak papa karena typescript punya fitur type inference. tapi sebaik nya dituliskan.
+// jawaban nomor 2, Kita tidak bisa langsung menggunakan nilai bertipe unknown tanpa melakukan pengecekan tipe terlebih dahulu tapi kalau any masih memungkinkan.
+// pembahasan soal:
+// Nomor 1: TypeScript punya fitur Type Inference yang bisa mendeteksi tipe data secara otomatis dari nilai yang dimasukkan. (Catatan kecil: Kalau nilainya sudah jelas seperti true, biasanya developer justru membiarkannya tanpa ditulis manual agar kodenya lebih bersih, tapi tahu konsepnya saja sudah sangat bagus!).
+// Nomor 2: unknown memaksa kita melakukan pengecekan tipe (seperti typeof) sebelum digunakan demi keamanan, sedangkan any membebaskan kita menggunakan nilai apa saja tanpa pengaman sama sekali.
